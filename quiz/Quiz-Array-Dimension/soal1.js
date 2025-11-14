@@ -20,6 +20,21 @@ output: [ 'tamkin', 'masuk', 'benci', 'cinta', 'ubar' ]
 
 function doubleReverse(arr) {
     //code here 
+    if (arr.length === 0) return 'invalid input parameter'
+    let result = [];
+    for (let i = arr.length - 1; i >= 0; i--){
+        const char = arr[i];
+        if (char.length % 2 === 0){
+            let reverseChar = '';
+            for (let j = char.length - 1; j >= 0; j--){
+                reverseChar += char[j];
+            }
+            result.push(reverseChar);
+        } else {
+            result.push(char);
+        }
+    }
+    return result;
 }
 
 console.log(doubleReverse(['rabu', 'cinta', 'benci', 'masuk', 'nikmat']));
